@@ -20,7 +20,7 @@ class PasteActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         intent?.data?.getQueryParameter("q")?.let {
-            clipboard.setPrimaryClip(ClipData.newPlainText("test", it))
+            clipboard.setPrimaryClip(ClipData.newPlainText("from qr code", it))
         }
         setContent {
             QRTransferTheme {
