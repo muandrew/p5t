@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "me.p5t.qrp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "me.p5t.qrp"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
