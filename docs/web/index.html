@@ -1,0 +1,25 @@
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<input id="text" type="text" value="https://p5t.me/?q=" style="width:80%" /><br />
+<div id="qrcode"></div>
+<script type="text/javascript">
+var qrcode = new QRCode("qrcode");
+function makeCode () {    
+  var elText = document.getElementById("text");
+  if (!elText.value) {
+    alert("Input a text");
+    elText.focus();
+    return;
+  }
+  qrcode.makeCode(elText.value);
+}
+makeCode();
+var elText = document.getElementById("text");
+elText.onblur = function () {
+  makeCode();
+};
+elText.onkeydown = function () {
+  if (event.keyCode == 13) {
+    makeCode();
+  }
+};
+</script>
