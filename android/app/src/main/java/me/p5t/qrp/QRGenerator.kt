@@ -6,8 +6,10 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Checkbox
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -32,33 +34,35 @@ fun QRGenerator() {
     var disablePrefix by remember {
         mutableStateOf(false)
     }
-    Column(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-    ) {
-        val data = if (disablePrefix) {
-            qr
-        } else {
-            Uri.Builder()
-                .scheme("https")
-                .authority("p5t.me")
-                .appendQueryParameter("q", qr)
-                .build()
-                .toString()
-        }
-        val sizeModifier = Modifier
-            .width(256.dp)
-            .height(256.dp)
-        Image(
-            painter = rememberQrCodePainter(data),
-            modifier = sizeModifier,
-            contentDescription = "qrcode",
-        )
-        TextField(value = qr, onValueChange = { qr = it })
-        Text(text = data)
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Checkbox(checked = disablePrefix, onCheckedChange = { disablePrefix = it })
-            Text(text = "Disable url formatting")
+    Scaffold { paddingValues ->
+        Column(
+            modifier = Modifier.padding(paddingValues).fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            val data = if (disablePrefix) {
+                qr
+            } else {
+                Uri.Builder()
+                    .scheme("https")
+                    .authority("p5t.me")
+                    .appendQueryParameter("q", qr)
+                    .build()
+                    .toString()
+            }
+            val sizeModifier = Modifier
+                .width(256.dp)
+                .height(256.dp)
+            Image(
+                painter = rememberQrCodePainter(data),
+                modifier = sizeModifier,
+                contentDescription = "qrcode",
+            )
+            TextField(value = qr, onValueChange = { qr = it })
+            Text(text = data)
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Checkbox(checked = disablePrefix, onCheckedChange = { disablePrefix = it })
+                Text(text = "disable p5t prefix")
+            }
         }
     }
 }
