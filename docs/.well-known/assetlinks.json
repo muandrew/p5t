@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "me.p5t.qrp",
+    "sha256_cert_fingerprints":
+    ["68:BD:30:51:73:E8:75:D5:AD:57:F4:F8:FC:C5:DB:CD:B6:D3:FE:51:18:D2:C8:5B:64:C9:5A:A4:5A:95:97:10"]
+  }
+}]
