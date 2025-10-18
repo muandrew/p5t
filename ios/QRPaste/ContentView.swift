@@ -9,14 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-            QRGeneratorView()
-        }
-        .padding()
+        QRGeneratorView()
     }
 }
 
@@ -37,15 +30,29 @@ struct QRGeneratorView: View {
             let _ = comp.scheme = "https"
             let _ = comp.host = "p5t.me"
             let _ = comp.queryItems = [URLQueryItem(name: "q", value: text),]
-            var url = comp.url?.absoluteString
-            var finalUrl = url != nil ? url! : "blah"
+            let url = comp.url?.absoluteString
+            let finalUrl = url != nil ? url! : "blah"
             
             Text(finalUrl)
             
             Image(uiImage: UIImage(data: getQRCodeData(text: finalUrl)!)!)
                 .resizable()
                 .frame(width: 200, height: 200)
-        }
+            Button(action: {
+                if UIPasteboard.general.hasStrings {
+                    if let str = UIPasteboard.general.string {
+                        text = str
+                    }
+                }
+            }, label: {
+                Text("Copy from pasteboard")
+            })
+        }.onOpenURL { url in
+            // remove p5t://
+            text = String(url.absoluteString.dropFirst(6))
+        }.onAppear(perform: {
+            
+        })
     }
     
     func getQRCodeData(text: String) -> Data? {

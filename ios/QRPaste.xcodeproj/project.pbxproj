@@ -3,17 +3,44 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D1E026132E9A44E600E2F812 /* QRPasteShare.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D1E026092E9A44E600E2F812 /* QRPasteShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D1E14BD02B1D64CA00CF598A /* QRPasteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E14BCF2B1D64CA00CF598A /* QRPasteApp.swift */; };
 		D1E14BD22B1D64CA00CF598A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E14BD12B1D64CA00CF598A /* ContentView.swift */; };
 		D1E14BD42B1D64CB00CF598A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1E14BD32B1D64CB00CF598A /* Assets.xcassets */; };
 		D1E14BD72B1D64CB00CF598A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1E14BD62B1D64CB00CF598A /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D1E026112E9A44E600E2F812 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D1E14BC42B1D64CA00CF598A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D1E026082E9A44E600E2F812;
+			remoteInfo = QRPasteShare;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D1E026142E9A44E600E2F812 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D1E026132E9A44E600E2F812 /* QRPasteShare.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		D1E026092E9A44E600E2F812 /* QRPasteShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QRPasteShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1E026192E9A465100E2F812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D1E14BCC2B1D64CA00CF598A /* QRPaste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRPaste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1E14BCF2B1D64CA00CF598A /* QRPasteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPasteApp.swift; sourceTree = "<group>"; };
 		D1E14BD12B1D64CA00CF598A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -21,7 +48,28 @@
 		D1E14BD62B1D64CB00CF598A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		D1E026172E9A44E600E2F812 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = D1E026082E9A44E600E2F812 /* QRPasteShare */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		D1E0260A2E9A44E600E2F812 /* QRPasteShare */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D1E026172E9A44E600E2F812 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = QRPasteShare; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		D1E026062E9A44E600E2F812 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D1E14BC92B1D64CA00CF598A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -36,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				D1E14BCE2B1D64CA00CF598A /* QRPaste */,
+				D1E0260A2E9A44E600E2F812 /* QRPasteShare */,
 				D1E14BCD2B1D64CA00CF598A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				D1E14BCC2B1D64CA00CF598A /* QRPaste.app */,
+				D1E026092E9A44E600E2F812 /* QRPasteShare.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -51,6 +101,7 @@
 		D1E14BCE2B1D64CA00CF598A /* QRPaste */ = {
 			isa = PBXGroup;
 			children = (
+				D1E026192E9A465100E2F812 /* Info.plist */,
 				D1E14BCF2B1D64CA00CF598A /* QRPasteApp.swift */,
 				D1E14BD12B1D64CA00CF598A /* ContentView.swift */,
 				D1E14BD32B1D64CB00CF598A /* Assets.xcassets */,
@@ -70,6 +121,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D1E026082E9A44E600E2F812 /* QRPasteShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D1E026182E9A44E600E2F812 /* Build configuration list for PBXNativeTarget "QRPasteShare" */;
+			buildPhases = (
+				D1E026052E9A44E600E2F812 /* Sources */,
+				D1E026062E9A44E600E2F812 /* Frameworks */,
+				D1E026072E9A44E600E2F812 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				D1E0260A2E9A44E600E2F812 /* QRPasteShare */,
+			);
+			name = QRPasteShare;
+			packageProductDependencies = (
+			);
+			productName = QRPasteShare;
+			productReference = D1E026092E9A44E600E2F812 /* QRPasteShare.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		D1E14BCB2B1D64CA00CF598A /* QRPaste */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1E14BDA2B1D64CB00CF598A /* Build configuration list for PBXNativeTarget "QRPaste" */;
@@ -77,10 +150,12 @@
 				D1E14BC82B1D64CA00CF598A /* Sources */,
 				D1E14BC92B1D64CA00CF598A /* Frameworks */,
 				D1E14BCA2B1D64CA00CF598A /* Resources */,
+				D1E026142E9A44E600E2F812 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D1E026122E9A44E600E2F812 /* PBXTargetDependency */,
 			);
 			name = QRPaste;
 			productName = QRPaste;
@@ -94,9 +169,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
+				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					D1E026082E9A44E600E2F812 = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
 					D1E14BCB2B1D64CA00CF598A = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -116,11 +194,19 @@
 			projectRoot = "";
 			targets = (
 				D1E14BCB2B1D64CA00CF598A /* QRPaste */,
+				D1E026082E9A44E600E2F812 /* QRPasteShare */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D1E026072E9A44E600E2F812 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D1E14BCA2B1D64CA00CF598A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -133,6 +219,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D1E026052E9A44E600E2F812 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D1E14BC82B1D64CA00CF598A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -144,7 +237,75 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D1E026122E9A44E600E2F812 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D1E026082E9A44E600E2F812 /* QRPasteShare */;
+			targetProxy = D1E026112E9A44E600E2F812 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		D1E026152E9A44E600E2F812 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QNX8UB3L5C;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QRPasteShare/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = QRPasteShare;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.p5t.qrp.QRPasteShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D1E026162E9A44E600E2F812 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QNX8UB3L5C;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QRPasteShare/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = QRPasteShare;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.p5t.qrp.QRPasteShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		D1E14BD82B1D64CB00CF598A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -276,6 +437,7 @@
 				DEVELOPMENT_TEAM = QNX8UB3L5C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QRPaste/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -307,6 +469,7 @@
 				DEVELOPMENT_TEAM = QNX8UB3L5C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QRPaste/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -329,6 +492,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D1E026182E9A44E600E2F812 /* Build configuration list for PBXNativeTarget "QRPasteShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1E026152E9A44E600E2F812 /* Debug */,
+				D1E026162E9A44E600E2F812 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D1E14BC72B1D64CA00CF598A /* Build configuration list for PBXProject "QRPaste" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
