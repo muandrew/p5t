@@ -1,18 +1,53 @@
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<input id="text" type="text" value="https://p5t.me/?q=" style="width:80%" /><br />
-<div id="qrcode"></div>
-<script type="text/javascript">
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+html {
+  font-size: 1em;
+}
+@media all and (max-width: 800px) {
+  html {
+    font-size:1.2em
+  }
+}
+@media all and (max-width: 350px) {
+  html {
+    font-size:1.4em
+  }
+}
+  </style>
+  <body>
+    <input id="url" type="text" value="https://p5t.me/?q=" style="width:100%"/><br />
+    <input id="text" type="text" value="" style="width:100%"/><br />
+    <input id="copy" type="button" value="from clipboard" style="width:100%"/><br />
+    <input id="gen" type="button" value="generate" style="width:100%"/><br />
+    <div id="qrcode" style="width:100%"/>
+  </body>
+  <script type="text/javascript">
 var qrcode = new QRCode("qrcode");
-function makeCode () {    
+function makeCode () {
+  var elUrl = document.getElementById("url");
   var elText = document.getElementById("text");
-  if (!elText.value) {
-    alert("Input a text");
-    elText.focus();
+  var fullUrl = elUrl.value + elText.value
+  if (!fullUrl) {
+    alert("Input a url and value");
+    elUrl.focus();
     return;
   }
-  qrcode.makeCode(elText.value);
+  qrcode.makeCode(fullUrl);
 }
 makeCode();
+var elUrl = document.getElementById("text");
+elUrl.onblur = function () {
+  makeCode();
+};
+elUrl.onkeydown = function () {
+  if (event.keyCode == 13) {
+    makeCode();
+  }
+};
 var elText = document.getElementById("text");
 elText.onblur = function () {
   makeCode();
@@ -22,4 +57,19 @@ elText.onkeydown = function () {
     makeCode();
   }
 };
-</script>
+var copyButton = document.getElementById('copy')
+copyButton.addEventListener('click', async () => {
+  try {
+    const text = await navigator.clipboard.readText();
+    elText.value = text;
+    makeCode();
+  } catch (error) {
+    console.error('Failed to read from clipboard:', error);
+  }
+});
+var genButton = document.getElementById('gen')
+copyButton.addEventListener('click', () => {
+  makeCode();
+});
+  </script>
+</html>
